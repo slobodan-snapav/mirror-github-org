@@ -38,7 +38,7 @@ def mirror(token, src_org, dst_org, full_run=False):
     src_org = g.get_organization(src_org)
     dst_org = g.get_organization(dst_org)
 
-    for src_repo in src_org.get_repos("public", sort="pushed", direction="desc"):
+    for src_repo in src_org.get_repos("private", sort="pushed", direction="desc"):
         check_rate_limiting(src_repo)
 
         dst_repo = None
